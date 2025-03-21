@@ -1,0 +1,28 @@
+{
+    "builder_type": "CTCModelObsBuilderV01",
+    "docType": "ingest",
+    "id": "MD:V01:METAR:HRRR_OPS:GtLk:CTC:VISIBILITY:ingest",
+    "model": "HRRR_OPS",
+    "region": "GtLk",
+    "subDocType": "VISIBILITY",
+    "subType": "CTC",
+    "subset": "METAR",
+    "template": {
+        "data": "\u0026handle_data",
+        "dataFileId": "DF_id",
+        "dataSourceId": "DS_id",
+        "docType": "CTC",
+        "fcstLen": "\u0026handle_fcst_len",
+        "fcstValidEpoch": "\u0026handle_time",
+        "fcstValidISO": "\u0026handle_iso_time",
+        "id": "DD:V01:METAR:HRRR_OPS:GtLk:CTC:VISIBILITY:\u0026handle_time:\u0026handle_fcst_len",
+        "model": "HRRR_OPS",
+        "region": "GtLk",
+        "subDocType": "VISIBILITY",
+        "subset": "METAR",
+        "type": "DD",
+        "version": "V01"
+    },
+    "type": "MD",
+    "version": "V01"
+}

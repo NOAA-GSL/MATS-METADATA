@@ -1,0 +1,47 @@
+{
+    "builder_type": "NetcdfMetarObsBuilderV01",
+    "docType": "ingest",
+    "id": "MD:V01:METAR:obs:ingest:netcdf",
+    "requires_time_interpolation": true,
+    "subDocType": "netcdf",
+    "subType": "obs",
+    "subset": "METAR",
+    "template": {
+        "correctedTime": "",
+        "data": {
+            "*stationName": {
+                "Ceiling": "\u0026ceiling_transform|*skyCover,*skyLayerBase",
+                "DewPoint": "\u0026kelvin_to_fahrenheit|*dewpoint",
+                "Reported Time": "\u0026umask_value_transform|*timeObs",
+                "Surface Pressure": "\u0026handle_pressure|*altimeter",
+                "Temperature": "\u0026kelvin_to_fahrenheit|*temperature",
+                "Visibility": "\u0026handle_visibility|*visibility",
+                "WD": "\u0026umask_value_transform|*windDir",
+                "WS": "\u0026meterspersecond_to_milesperhour|*windSpeed",
+                "name": "\u0026handle_station|*stationName"
+            }
+        },
+        "dataSourceId": "MADIS",
+        "docType": "obs",
+        "fcstValidEpoch": "\u0026derive_valid_time_epoch|%Y%m%d_%H%M",
+        "fcstValidISO": "\u0026derive_valid_time_iso|%Y%m%d_%H%M",
+        "id": "DD:V01:METAR:obs:\u0026derive_valid_time_epoch|%Y%m%d_%H%M",
+        "subset": "METAR",
+        "type": "DD",
+        "units": {
+            "Ceiling": "ft",
+            "DewPoint": "deg F",
+            "RH": "percent",
+            "Surface Pressure": "mb",
+            "Temperature": "deg F",
+            "Visibility": "miles",
+            "WD": "degrees",
+            "WS": "mph"
+        },
+        "version": "V01"
+    },
+    "type": "MD",
+    "validTimeDelta": 1800,
+    "validTimeInterval": 3600,
+    "version": "V01"
+}
