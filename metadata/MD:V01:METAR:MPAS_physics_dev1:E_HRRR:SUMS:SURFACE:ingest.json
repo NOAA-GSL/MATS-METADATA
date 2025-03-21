@@ -1,0 +1,47 @@
+{
+    "builder_type": "PartialSumsSurfaceModelObsBuilderV01",
+    "docType": "ingest",
+    "id": "MD:V01:METAR:MPAS_physics_dev1:E_HRRR:SUMS:SURFACE:ingest",
+    "model": "MPAS_physics_dev1",
+    "region": "E_HRRR",
+    "subDocType": "SURFACE",
+    "subType": "SUMS",
+    "subset": "METAR",
+    "template": {
+        "data": {
+            "DewPoint": "\u0026handle_sum|DewPoint",
+            "RelativeHumidity": "\u0026handle_sum|RH",
+            "SurfacePressure": "\u0026handle_sum|Surface Pressure",
+            "Temperature": "\u0026handle_sum|Temperature",
+            "WindDirection": "\u0026handle_sum|WD",
+            "WindSpeed": "\u0026handle_sum|WS",
+            "WindU": "\u0026handle_sum|UW",
+            "WindV": "\u0026handle_sum|VW"
+        },
+        "dataFileId": "DF_id",
+        "dataSourceId": "DS_id",
+        "docType": "SUMS",
+        "fcstLen": "\u0026handle_fcst_len",
+        "fcstValidEpoch": "\u0026handle_time",
+        "fcstValidISO": "\u0026handle_iso_time",
+        "id": "DD:V01:METAR:MPAS_physics_dev1:E_HRRR:SUMS:SURFACE:\u0026handle_time:\u0026handle_fcst_len",
+        "model": "MPAS_physics_dev1",
+        "region": "E_HRRR",
+        "subDocType": "SURFACE",
+        "subset": "METAR",
+        "type": "DD",
+        "units": {
+            "DewPoint": "deg F",
+            "RelativeHumidity": "%",
+            "SurfacePressure": "mb",
+            "Temperature": "deg F",
+            "WindDirection": "",
+            "WindSpeed": "mph",
+            "WindU": "m/s",
+            "WindV": "m/s"
+        },
+        "version": "V01"
+    },
+    "type": "MD",
+    "version": "V01"
+}

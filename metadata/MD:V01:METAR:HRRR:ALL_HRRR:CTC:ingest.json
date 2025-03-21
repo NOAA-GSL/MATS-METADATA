@@ -1,0 +1,34 @@
+{
+    "builder_type": "GsdModelBuilderV01",
+    "docType": "ingest",
+    "id": "MD:V01:METAR:HRRR:ALL_HRRR:CTC:ingest",
+    "model": "HRRR",
+    "region": "ALL_HRRR",
+    "statement": "set @FirstTime = {first_epoch}; set @LastTime = {last_epoch}; select time, fcst_len, trsh*10 as threshold, yy as hits, yn as false_alarms, ny as misses, nn as correct_negatives from ceiling_sums2.HRRR_ALL_HRRR WHERE time \u003e= @FirstTime and time \u003c= @LastTime order by time, fcst_len, threshold;",
+    "subType": "CTC",
+    "subset": "METAR",
+    "template": {
+        "data": {
+            "*threshold": {
+                "correct_negatives": "*correct_negatives",
+                "false_alarms": "*false_alarms",
+                "hits": "*hits",
+                "misses": "*misses"
+            }
+        },
+        "dataFileId": "DF_id",
+        "dataSourceId": "DS_id",
+        "docType": "CTC",
+        "fcstLen": "*fcst_len",
+        "fcstValidEpoch": "*time",
+        "fcstValidISO": "*{ISO}time",
+        "id": "DD:V01:METAR:HRRR_ALL_HRRR_CTC:*time:*fcst_len",
+        "model": "HRRR",
+        "region": "ALL_HRRR",
+        "subset": "METAR",
+        "type": "DD",
+        "version": "V01"
+    },
+    "type": "MD",
+    "version": "V01"
+}

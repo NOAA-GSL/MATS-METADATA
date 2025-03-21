@@ -1,0 +1,51 @@
+{
+    "builder_type": "GribModelBuilderV01",
+    "docType": "ingest",
+    "fcstLens": "0,1,3,6,9,12,15,18,21,24,27,30,33,36",
+    "id": "MD:V01:METAR:RAP_OPS_130:ingest:grib2",
+    "model": "RAP_OPS_130",
+    "subDocType": "grib2",
+    "subType": "model",
+    "subset": "METAR",
+    "template": {
+        "correctedTime": "",
+        "data": {
+            "\u0026getName": {
+                "Ceiling": "\u0026handle_ceiling",
+                "DewPoint": "\u0026kelvin_to_fahrenheit|*2 metre dewpoint temperature",
+                "RH": "\u0026handle_RH|*2 metre relative humidity",
+                "Surface Pressure": "\u0026handle_surface_pressure|*Surface pressure",
+                "Temperature": "\u0026kelvin_to_fahrenheit|*2 metre temperature",
+                "Vegetation Type": "\u0026handle_vegetation_type",
+                "Visibility": "\u0026handle_visibility|*Visibility",
+                "WD": "\u0026handle_wind_direction",
+                "WS": "\u0026handle_wind_speed|*10 metre U wind component,*10 metre V wind component",
+                "name": "\u0026getName"
+            }
+        },
+        "dataSourceId": "NCO",
+        "docType": "model",
+        "fcstLen": "\u0026handle_fcst_len",
+        "fcstValidEpoch": "\u0026handle_time",
+        "fcstValidISO": "\u0026handle_iso_time",
+        "id": "DD:V01:METAR:RAP_OPS_130:\u0026handle_time:\u0026handle_fcst_len",
+        "model": "RAP_OPS_130",
+        "subset": "METAR",
+        "type": "DD",
+        "units": {
+            "Ceiling": "ft",
+            "DewPoint": "deg F",
+            "RH": "percent",
+            "Surface Pressure": "mb",
+            "Temperature": "deg F",
+            "Visibility": "miles",
+            "WD": "degrees",
+            "WS": "mph"
+        },
+        "version": "V01"
+    },
+    "type": "MD",
+    "validTimeDelta": 1800,
+    "validTimeInterval": 3600,
+    "version": "V01"
+}

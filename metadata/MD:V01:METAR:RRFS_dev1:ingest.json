@@ -1,0 +1,36 @@
+{
+    "builder_type": "GsdModelBuilderV01",
+    "docType": "ingest",
+    "id": "MD:V01:METAR:RRFS_dev1:ingest",
+    "model": "RFS_dev1",
+    "statement": "set @FirstTime = {first_epoch}; set @LastTime = {last_epoch}; select m.time, m.fcst_len, m.sta_id as madis_id, m.temp, m.press  as slp, m.dp, m.rh, m.wd, m.ws, c.ceil, v.vis100 as vis, m.sta_id, s.id, s.net, s.name from madis3.RRFS_dev1qp m, madis3.stations as s, ceiling2.RRFS_dev1 c, visibility.RRFS_dev1 v where 1 = 1 AND m.time \u003e= @FirstTime and m.time \u003c= @LastTime AND m.time = c.time AND m.time = v.time and m.sta_id = c.madis_id and m.sta_id = v.madis_id and m.fcst_len = c.fcst_len and m.fcst_len = v.fcst_len and m.sta_id = s.id and s.net = 'METAR' order by time, fcst_len, name;",
+    "subset": "METAR",
+    "template": {
+        "data": {
+            "*name": {
+                "Ceiling": "*ceil",
+                "DewPoint": "*dp",
+                "RH": "*rh",
+                "Reported Time": "*time",
+                "Surface Pressure": "*slp",
+                "Temperature": "*temp",
+                "Visibility": "*vis",
+                "WD": "*wd",
+                "WS": "*ws",
+                "name": "*name"
+            }
+        },
+        "dataSourceId": "RFS_dev1",
+        "docType": "model",
+        "fcstLen": "*fcst_len",
+        "fcstValidEpoch": "*time",
+        "fcstValidISO": "*{ISO}time",
+        "id": "DD:V01:METAR:RRFS_dev1:*time:*fcst_len",
+        "model": "RRFS_dev1",
+        "subset": "METAR",
+        "type": "DD",
+        "version": "V01"
+    },
+    "type": "MD",
+    "version": "V01"
+}
